@@ -5,6 +5,7 @@ angular.module('video-player')
     controller: ['youTube', function (youTube) {
       this.videos = window.exampleVideoData;
       this.currentVideo = this.videos[0];
+      this.autoplay = true;
       
       this.handleClick = (video) => {
         this.currentVideo = video;
@@ -23,6 +24,11 @@ angular.module('video-player')
         if (data) {
           this.updateVideos(data);
         }
+      };
+      
+      this.handleAutoplay = () => {
+        this.autoplay = !this.autoplay;
+        
       };
       
       youTube.search('hack reactor', this.searchResults);

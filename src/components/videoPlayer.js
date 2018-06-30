@@ -3,8 +3,10 @@ angular.module('video-player')
   .component('videoPlayer', {
     
     bindings: {
-      video: '<'
+      video: '<',
+      autoplay: '<',
+      onClick: '<'
     },
-    
-    templateUrl:'src/templates/videoPlayer.html' 
+      
+    templateUrl: 'src/templates/videoPlayer.html' 
   });
