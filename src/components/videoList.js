@@ -4,13 +4,10 @@ angular.module('video-player')
     templateUrl: 'src/templates/videoList.html',
     bindings: {
       videos: '<',
-      clickHandler: '<'
+      onClick: '<'
     },
     controller: function() {
-      this.onClick = (video) => {
-        this.clickHandler(video);
-        // this.currentVideo = e;
-      };
+
     }
   
   });

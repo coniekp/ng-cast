@@ -3,10 +3,7 @@ angular.module('video-player')
   .component('app', {
     templateUrl: 'src/templates/app.html',
     
-    controller: function () {
-    
-      this.selectVideo = () => {};
-      this.searchResults = () => {};
+    controller: ['youTube', function (youTube) {
       this.videos = window.exampleVideoData;
       this.currentVideo = this.videos[0];
       
@@ -16,9 +13,19 @@ angular.module('video-player')
       
       this.updateVideos = (videos) => {
         this.videos = videos;
-        this.currentVideos = this.videos[0];
+        this.selectVideo(this.videos[0]);
       };
-    }
-  
-
+      
+      this.selectVideo = (video) => {
+        this.currentVideos = video;
+      };
+     
+      this.searchResults = (data) => {
+        if(data.data){
+          this.updateVideos(data.data.items);
+        }
+      };
+      
+      youTube.search('hack reactor', this.searchResults);
+    }]
   });
