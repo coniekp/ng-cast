@@ -12,6 +12,8 @@ angular.module('video-player')
       };
       
       $http.get('https://www.googleapis.com/youtube/v3/search', options).then(
-        callback);
+        function(data) {
+          callback(data.data.items);
+        });
     };
   });

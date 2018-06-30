@@ -17,14 +17,18 @@ angular.module('video-player')
       };
       
       this.selectVideo = (video) => {
-        this.currentVideos = video;
+        this.currentVideo = video;
       };
      
       this.searchResults = (data) => {
-        if(data.data){
-          this.updateVideos(data.data.items);
+        if (data) {
+          this.updateVideos(data);
         }
       };
+      
+      // this.handleKeyUp = (event) => {
+      //   console.log(event);
+      // }
       
       youTube.search('hack reactor', this.searchResults);
     }]
