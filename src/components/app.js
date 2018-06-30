@@ -1,7 +1,6 @@
 angular.module('video-player')
 
   .component('app', {
-    templateUrl: 'src/templates/app.html',
     
     controller: ['youTube', function (youTube) {
       this.videos = window.exampleVideoData;
@@ -26,10 +25,9 @@ angular.module('video-player')
         }
       };
       
-      // this.handleKeyUp = (event) => {
-      //   console.log(event);
-      // }
-      
       youTube.search('hack reactor', this.searchResults);
-    }]
+    }],
+    
+    templateUrl: 'src/templates/app.html'
+
   });
