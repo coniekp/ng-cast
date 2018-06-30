@@ -13,6 +13,11 @@ angular.module('video-player')
       this.handleClick = (video) => {
         this.currentVideo = video;
       };
+      
+      this.updateVideos = (videos) => {
+        this.videos = videos;
+        this.currentVideos = this.videos[0];
+      };
     }
   
 
